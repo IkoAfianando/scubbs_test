@@ -1,5 +1,12 @@
 import unittest
 
+def sum_integer(start, end):
+    # sum all integer from start to end
+    result = 0
+    for i in range(start, end + 1):
+        result += i
+    return result
+
 def sort_people_by_name(data):
     if type(data) == dict:
         sorted_people = sorted(data)
@@ -29,6 +36,9 @@ def calculate_price(price, discount):
 
 
 class TestHello(unittest.TestCase):
+    def test_sum_integer(self):
+        self.assertEqual(sum_integer(1, 3), 6)
+
     def test_sort_people_by_name(self):
         data = {"Mary": 17, "Bob": 62, "John": 32}
         self.assertEqual(sort_people_by_name(data), "Bob, John, Mary")
